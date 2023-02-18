@@ -72,5 +72,30 @@ class BlogApiControllerTest {
         assertThat(articles.get(0).getTitle()).isEqualTo(title);
         assertThat(articles.get(0).getContent()).isEqualTo(content);
     }
+
+    @DisplayName("findAllArticles: 아티클 목록 조회에 성공한다.")
+    @Test
+    public void findAllArticles() throws Exception {
+        // given
+        final String url = "/api/articles";
+        final String title = "title";
+        final String content = "content";
+
+        blogRepository.save(Article.builder()
+                .title(title)
+                .content(content)
+                .build());
+
+        // when
+        final ResultActions resultActions = mockMvc.perform(get(url)
+                .accept(MediaType.APPLICATION_JSON));
+
+        // then
+        resultActions
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$[0].content").value(content))
+                .andExpect(jsonPath("$[0].title").value(title));
+    }
+
 }
 
