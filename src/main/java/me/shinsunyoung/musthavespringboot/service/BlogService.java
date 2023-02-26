@@ -4,9 +4,9 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import me.shinsunyoung.musthavespringboot.domain.Article;
 import me.shinsunyoung.musthavespringboot.dto.AddArticleRequest;
-import me.shinsunyoung.musthavespringboot.dto.ArticleResponse;
 import me.shinsunyoung.musthavespringboot.dto.UpdateArticleRequest;
 import me.shinsunyoung.musthavespringboot.repository.BlogRepository;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,8 +17,8 @@ public class BlogService {
 
     private final BlogRepository blogRepository;
 
-    public Article save(AddArticleRequest request) {
-        return blogRepository.save(request.toEntity());
+    public Article save(AddArticleRequest request, String userName) {
+        return blogRepository.save(request.toEntity(userName));
     }
 
     public List<Article> findAll() {
