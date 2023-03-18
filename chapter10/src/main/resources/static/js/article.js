@@ -1,7 +1,7 @@
 // 삭제 기능
 const deleteButton = document.getElementById('delete-btn');
 
-if (deleteButton != null) {
+if (deleteButton) {
     deleteButton.addEventListener('click', event => {
         let id = document.getElementById('article-id').value;
         function success() {
@@ -14,7 +14,7 @@ if (deleteButton != null) {
             location.replace('/articles');
         }
 
-        httpRequest('DELETE','/api/articles/' + id, null, success, fail);
+        httpRequest('DELETE',`/api/articles/${id}`, null, success, fail);
     });
 }
 
