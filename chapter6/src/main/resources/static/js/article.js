@@ -7,7 +7,7 @@ if (deleteButton) {
         fetch(`/api/articles/${id}`, {
             method: 'DELETE'
         })
-            .then((response) => {
+            .then(() => {
                 alert('삭제가 완료되었습니다.');
                 location.replace('/articles');
             });
@@ -32,7 +32,7 @@ if (modifyButton) {
                 content: document.getElementById('content').value
             })
         })
-            .then((response) => {
+            .then(() => {
                 alert('수정이 완료되었습니다.');
                 location.replace(`/articles/${id}`);
             });
@@ -54,7 +54,7 @@ if (createButton) {
                 content: document.getElementById('content').value
             })
         })
-            .then((response) => {
+            .then(() => {
                 alert('등록 완료되었습니다.');
                 location.replace('/articles');
             });
