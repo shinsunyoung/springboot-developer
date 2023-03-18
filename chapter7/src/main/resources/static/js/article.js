@@ -17,12 +17,12 @@ if (deleteButton) {
 // 수정 기능
 const modifyButton = document.getElementById('modify-btn');
 
-if (modifyButton != null) {
+if (modifyButton) {
     modifyButton.addEventListener('click', event => {
         let params = new URLSearchParams(location.search);
         let id = params.get('id');
 
-        fetch('/api/articles/' + id, {
+        fetch(`/api/articles/${id}`, {
             method: 'PUT',
             headers: {
                 "Content-Type": "application/json",
@@ -34,7 +34,7 @@ if (modifyButton != null) {
         })
             .then((response) => {
                 alert('수정이 완료되었습니다.');
-                location.replace('/articles/' + id);
+                location.replace(`/articles/${id}`);
             });
     });
 }
@@ -42,7 +42,7 @@ if (modifyButton != null) {
 // 생성 기능
 const createButton = document.getElementById('create-btn');
 
-if (createButton != null) {
+if (createButton) {
     createButton.addEventListener('click', event => {
         fetch('/api/articles', {
             method: 'POST',
