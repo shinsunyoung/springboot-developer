@@ -2,9 +2,11 @@ package me.shinsunyoung.springbootdeveloper.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import me.shinsunyoung.springbootdeveloper.domain.Article;
 
 @AllArgsConstructor
+@NoArgsConstructor
 @Getter
 public class AddArticleRequest {
 

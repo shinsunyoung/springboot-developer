@@ -37,7 +37,7 @@ class BlogApiControllerTest {
     @Autowired
     protected ObjectMapper objectMapper;
 
-    @Autowiredㄷㅈㄷㅉㄸㅈㄷㅈㄷㅈ
+    @Autowired
     private WebApplicationContext context;
 
     @Autowired
