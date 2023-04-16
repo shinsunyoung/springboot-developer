@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>블로그 글</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="p-5 mb-5 text-center</> bg-light">
+    <h1 class="mb-3">My Blog</h1>
+    <h4 class="mb-3">블로그에 오신 것을 환영합니다.</h4>
+  </div>
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-lg-8">
+        <article>
+          <input type="hidden" id="article-id" th:value="${article.id}">
+          <header class="mb-4">
+            <h1 class="fw-bolder mb-1" th:text="${article.title}"></h1>
+            <div class="text-muted fst-italic mb-2" th:text="|Posted on ${#temporals.format(article.createdAt, 'yyyy-MM-dd HH:mm')} By ${article.author}|"></div>
+          </header>
+          <section class="mb-5">
+            <p class="fs-5 mb-4" th:text="${article.content}"></p>
+          </section>
+          <button type="button" id="modify-btn"
+                  th:onclick="|location.href='@{/new-article?id={articleId}(articleId=${article.id})}'|"
+                  class="btn btn-primary btn-sm">수정</button>
+          <button type="button" id="delete-btn"
+                  class="btn btn-secondary btn-sm">삭제</button>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/article.js"></script>
+</body>
