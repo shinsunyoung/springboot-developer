@@ -12,9 +12,9 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import java.time.LocalDateTime;
 
 @EntityListeners(AuditingEntityListener.class)
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
-@Getter
 @Entity
+@Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Article {
 
     @Id
@@ -36,6 +36,7 @@ public class Article {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
+
     @Builder
     public Article(String title, String content) {
         this.title = title;
@@ -47,4 +48,3 @@ public class Article {
         this.content = content;
     }
 }
-

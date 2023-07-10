@@ -16,8 +16,8 @@ spring:
       client:
         registration:
           google:
-            client-id: 6636..
-            client-secret: GOCS..
+            client-id: 663642..
+            client-secret: GOCSP...
             scope:
               - email
               - profile

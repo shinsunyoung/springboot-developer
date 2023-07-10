@@ -5,12 +5,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import me.shinsunyoung.springbootdeveloper.domain.Article;
 
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter
 public class AddArticleRequest {
-
     private String title;
+
     private String content;
 
     public Article toEntity() {
@@ -20,4 +20,3 @@ public class AddArticleRequest {
                 .build();
     }
 }
-

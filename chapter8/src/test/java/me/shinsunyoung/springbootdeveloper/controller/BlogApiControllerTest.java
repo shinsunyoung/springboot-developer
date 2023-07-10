@@ -50,7 +50,7 @@ class BlogApiControllerTest {
         blogRepository.deleteAll();
     }
 
-    @DisplayName("addArticle: 아티클 추가에 성공한다.")
+    @DisplayName("addArticle: 블로그 글 추가에 성공한다.")
     @Test
     public void addArticle() throws Exception {
         // given
@@ -76,7 +76,7 @@ class BlogApiControllerTest {
         assertThat(articles.get(0).getContent()).isEqualTo(content);
     }
 
-    @DisplayName("findAllArticles: 아티클 목록 조회에 성공한다.")
+    @DisplayName("findAllArticles: 블로그 글 목록 조회에 성공한다.")
     @Test
     public void findAllArticles() throws Exception {
         // given
@@ -100,7 +100,7 @@ class BlogApiControllerTest {
                 .andExpect(jsonPath("$[0].title").value(title));
     }
 
-    @DisplayName("findArticle: 아티클 단건 조회에 성공한다.")
+    @DisplayName("findArticle: 블로그 글 조회에 성공한다.")
     @Test
     public void findArticle() throws Exception {
         // given
@@ -124,7 +124,7 @@ class BlogApiControllerTest {
     }
 
 
-    @DisplayName("deleteArticle: 아티클 삭제에 성공한다.")
+    @DisplayName("deleteArticle: 블로그 글 삭제에 성공한다.")
     @Test
     public void deleteArticle() throws Exception {
         // given
@@ -148,7 +148,7 @@ class BlogApiControllerTest {
     }
 
 
-    @DisplayName("updateArticle: 아티클 수정에 성공한다.")
+    @DisplayName("updateArticle: 블로그 글 수정에 성공한다.")
     @Test
     public void updateArticle() throws Exception {
         // given
@@ -181,4 +181,5 @@ class BlogApiControllerTest {
     }
 
 }
+
 

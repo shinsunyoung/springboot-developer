@@ -1,1 +1,2 @@
-# spring-boot-developer
+# 06장. 블로그 기획하고 API 만들기
+# Q&A 
