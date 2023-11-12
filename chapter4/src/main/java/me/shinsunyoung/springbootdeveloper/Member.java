@@ -17,4 +17,10 @@ public class Member {
     private Long id;
     @Column(name = "name", nullable = false)
     private String name;
+
+    public Member(long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
 }
